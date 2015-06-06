@@ -1,0 +1,35 @@
+<!-- Appels aux scripts -->
+<script type="text/javascript" src="<{xoAppUrl /jseffects/others/textsizer.js}>"></script>
+<script type="text/javascript">
+    var GB_ROOT_DIR = "<{xoAppUrl /jseffects/greybox/}>";
+</script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/jquery/jquery.js}>"></script>
+<script type="text/javascript">
+    JQ = $;  //rename $ function
+</script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/prototype/prototype.js}>"></script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/prototype/scriptaculous.js?load=effects}>"></script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/prototype/lightbox.js}>"></script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/jquery/thickbox.js}>"></script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/greybox/AJS.js}>"></script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/greybox/AJS_fx.js}>"></script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/greybox/gb_scripts.js}>"></script>
+<script type="text/javascript" src="<{xoAppUrl /jseffects/arc_90/arc90_linkthumb.js}>"></script>
+
+
+<!-- Css des scripts -->
+<link rel="stylesheet" type="text/css" media="screen" href="<{xoAppUrl /jseffects/prototype/lightbox.css}>" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{xoAppUrl /jseffects/jquery/thickbox.css}>" />	
+<link rel="stylesheet" type="text/css" media="screen" href="<{xoAppUrl /jseffects/greybox/gb_styles.css}>" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{xoAppUrl /jseffects/arc_90/arc90_linkthumb.css}>" />
+
+<!-- pour la transparence des images au format png sous ie -->
+<!--[if lte IE 6]>
+	<script type="text/javascript">
+		var WEBFX_PNG_PATTERN=".*.png";
+		var WEBFX_PNG_BLANK = "<{xoImgUrl /jseffects/img/blank.gif}>";
+	</script>
+	<style type="text/css">
+	img { behavior: url(<{xoImgUrl /jseffects/pngbehavior.htc}>); }
+	</style>
+<![endif]-->

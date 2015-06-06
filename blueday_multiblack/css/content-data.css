@@ -1,0 +1,182 @@
+/* Thanks to Snow77, Skalpa and Leostotch for the initial work, Dugris for help  */
+/* Mor.pho.GEN.e.sis version 2.0 by kris (http://www.xoofoo.org and http://www.frxoops.org) */
+/* file name : content-data.css (version 1.0) - 22 mai 2007 */
+
+/*============= Style pour l'include accessibilitybar.html ================*/
+/*#xo-accessibilitybar {
+	display:							block;
+	float: 							right;
+	padding-top: 					2px;
+	padding-right:					1em;
+}
+#xo-accessibilitybar a {
+	text-decoration: 				none;
+	border: 							none;
+}
+#xo-accessibilitybar img {
+	width: 							22px;
+	height: 							22px;
+}*/
+
+/*============== Styles pour l'include userbar_siteclosed.html =================*/
+#xo-userbar_siteclosed {
+	float: 							right;
+	position: 						relative;
+	top: 								0px;
+	background-color: 			inherit;
+	color:							#666;
+	border: none;
+}
+#xo-userbar_siteclosed form {
+	display:							inline;
+	padding:							0;
+}
+#xo-userbar_siteclosed button {
+	margin: 							0 -3px;
+	background-color:				transparent;
+	background-image: 			none;
+	color: 							inherit;
+	padding:							0;
+	border:							none;
+}
+#xo-userbar_siteclosed button img {
+	width: 							18px;
+	height: 							18px;
+ }
+ #xo-userbar_siteclosed button:hover {
+ 	border: 							0 !important;
+ }
+#xo-userbar_siteclosed input {
+	/*width: 							80px;
+	background-color: 			#c2d1f0;
+	color:							#333;*/
+	width: 							80px;
+	background-color: 			#fff;
+	color:							#666;
+}
+#xo-userbar_siteclosed input:hover {
+	background-color: 			#c2d1f0;
+	color:							#666;
+}
+/*======== styles pour mettre des blocs "flottants" par exemple des images ======== */
+.floatleft {
+	float: 							left;
+	margin-top: 					1em;
+	margin-right : 				1em;
+	padding-left: 					4px;
+	border: 							0;
+}
+.floatright {
+	float: 							right;
+	margin: 							0 0 10px 10px;
+	padding: 						2px;
+	border: 							0;
+}
+/*========  classes d'alignement ======== */
+.left   { text-align: 			left; }
+.right  { text-align: 			right; }
+.center { text-align: 			center;	}
+.justify { text-align:			justify; }
+.middle { vertical-align: 		middle;}
+.top { vertical-align: 			top;}
+.bottom { vertical-align: 		bottom;}
+/*========  classes de largeur ======== */
+.width100 { width: 				100%; }
+.width75 { width: 				75%; }
+.width50 { width: 				50%; }
+.width33 { width: 				33%; }
+.width25 { width: 				25%; }
+/*========  classes d'affichage ======== */
+.clear { clear: 					both; }
+.block { display: 				block; }
+.hide  { display: 				none; }
+/* ======== Mise en forme de certains liens hypertexte ================ */
+a.printable, a.pdf, a.friend {
+	width:							22px;
+	height:							22px;
+	background-repeat:			no-repeat;
+	background-position:			left top;
+	text-indent:					-1000em;
+}
+a.printable	{	background-image: url(../icons/action/printable.png); }
+a.pdf	{	background-image: url(../icons/action/pdf.png); }
+a.friend	{	background-image: url(../icons/action/friend.png); }
+
+/* mise en forme des liens du footer */
+#xo-footer .rss a:hover {	text-decoration: none;}
+#xo-footer a#license, #xo-footer a#license:hover {
+	background-color: 			transparent;
+	background-image: 			url(../icons/action/microbt_cc.png);
+	background-repeat: 			no-repeat;
+	background-position: 		left;
+	padding-left: 					90px;
+	color: 							inherit;
+	text-decoration: 				none;
+}
+#xo-footer a#validxhtml, #xo-footer a#validxhtml:hover {
+	background-color: 			transparent;
+	background-image: 			url(../icons/action/microbt_xhtml.png);
+	background-repeat: 			no-repeat;
+	background-position: 		left;
+	padding-left: 					90px;
+	color: 							inherit;
+	text-decoration: 				none;
+}
+#xo-footer a#validcss, #xo-footer a#validcss:hover {
+	background-color: 			transparent;
+	background-image: 			url(../icons/action/microbt_css.png);
+	background-repeat: 			no-repeat;
+	background-position: 		left;
+	padding-left: 					90px;
+	color: 							inherit;
+	text-decoration: 				none;
+}
+#xo-footer a#xoofoo, #xo-footer a#xoofoo:hover {
+	background-color: 			transparent;
+	background-image: 			url(../icons/action/microbt_xoofoo.png);
+	background-repeat: 			no-repeat;
+	background-position: 		left;
+	padding-left: 					90px;
+	color: 							inherit;
+	text-decoration: 				none;
+}
+#xo-footer a#rss, #xo-footer a#rss:hover {
+	background: 					transparent	url(../icons/action/feed.png) no-repeat center right;
+	padding-right: 				16px;
+	color: 							inherit;
+	text-decoration: 				none;
+}
+
+/*======== Pour le body de l'éditeur tinyeditor/inbetwen ======== */
+body.mceContentBody {
+	background-color: 			#fff;
+	background-image: 			none;
+	color: 							#333;
+}
+/* ======== Mise en forme pour l'accessibilité ================ */
+/*a[hreflang]:after {
+	content: "\0000a0[alt+" attr(hreflang) "]";
+}
+a[accesskey]:after {
+	content: "\0000a0[alt+" attr(accesskey) "]";
+}*/
+
+/* -- signature dans CBB/NewBB -- */
+.signature {
+	font-style: italic;
+	font-size: .9em;
+}
+
+/* system_block_login.html */
+.system-login {
+	text-align: center;
+}
+.system-login label {
+	font-weight: normal !important;
+}
+
+/* ============ Style pour le formulaire de notification ============ */
+span.notification_title {
+	font-size:.9em;
+	font-weight:bold;
+}

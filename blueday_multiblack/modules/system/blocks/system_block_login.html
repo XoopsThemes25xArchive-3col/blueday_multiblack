@@ -1,0 +1,20 @@
+<div class="system-login">
+<form action="<{xoAppUrl /user.php}>" method="post">
+	<label>
+		<{$block.lang_username}><br />
+	    <input type="text" name="uname" size="12" value="<{$block.unamevalue}>" maxlength="25" title="<{$smarty.const.THEME_DESC_PSEUDO}>"/>
+	</label><br />
+	<label>
+	    <{$block.lang_password}><br />
+	    <input type="password" name="pass" size="12" maxlength="32" title="<{$smarty.const.THEME_DESC_PASSWORD}>"/>
+	</label><br />
+    <!--input  class ="xo-formbuttons" type="checkbox" name="rememberme" value="On" title="<{$block.lang_rememberme}>"/><{$block.lang_rememberme}><br /-->
+    <input type="hidden" name="xoops_redirect" value="<{$smarty.server.REQUEST_URI}>" />
+    <input type="hidden" name="op" value="login" />
+    <input class="xo-formbuttons" type="submit" value="<{$block.lang_login}>" title="<{$block.lang_login}>"/>
+     <br />
+	<{$block.sslloginlink}>
+</form>
+<a href="<{xoAppUrl /user.php#lost}>" title="<{$block.lang_lostpass}>"><{$block.lang_lostpass}></a><br />
+<a href="<{xoAppUrl /register.php}>" title="<{$block.lang_registernow}>"><{$block.lang_registernow}></a>
+</div>

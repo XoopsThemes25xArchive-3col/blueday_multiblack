@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+	<!-- paramètres pour le positionnement des blocs haut et bas -->
+	<{* Center blocks display order valid values are:  lrc (left right / center) lcr (left center right) clr (center / left right)	*}>
+	<{assign var=theme_top_order value=clr}>
+	<{assign var=theme_bottom_order value=clr}>
+
+   <!-- indique le dossier des templates du thème -->
+	<{assign var=theme_name value=$xoTheme->folderName|cat:'/xotpl'}>
+
+   <!-- Metas -->
+	<{includeq file="$theme_name/xometas.html"}>
+
+	<!-- inscription via header.php-->
+	<{$xoops_module_header}>
+
+   <!-- Scripts -->
+	<{includeq file="$theme_name/xoscripts.html"}>
+
+</head>
+<body id="<{$xoops_dirname}>" class="<{$xoops_langcode}>">
+<{if $xoBlocks.canvas_left and $xoBlocks.canvas_right}><{assign var=columns_layout value='threecolumns-layout'}>
+<{elseif $xoBlocks.canvas_left}><{assign var=columns_layout value='leftcolumn-layout'}>
+<{elseif $xoBlocks.canvas_right}><{assign var=columns_layout value='rightcolumn-layout'}>
+<{/if}>
+<div id="xo-wrapper" class="<{$xoops_dirname}>">
+	
+  <div id="xo-bgstatic" class="<{$xoops_dirname}>"></div>
+	
+<!-- #### marge supérieure de 13px #### -->
+	
+  <table>
+  
+  <tr>
+    <td id="leftcorner-top">&nbsp;</td>
+    <td id="margetop">&nbsp;</td>
+    <td id="rightcorner-top">&nbsp;</td>
+  </tr>
+  
+  </table>
+	
+	<div id="xo-canvas"<{if $columns_layout}> class="<{$columns_layout}>"<{/if}>>
+
+<!-- #### marge gauche 13px et ouverture colonne centrale #### -->
+	<table>
+     <tr>
+    	<td id="margegauche">&nbsp;</td>
+    	
+        <!-- #### début de la colonne centrale #### -->
+        <td>
+
+
+	<!-- début du HAUT DE PAGE -->
+		
+    <!-- **** Ajout d'un fond gauche et droit au header **** -->
+    <table>
+    	<tr>
+    		<td id="xo-headerleft">&nbsp;</td>
+            <td>
+           		<div id="xo-header" class="<{$xoops_dirname}>">
+
+      			<!-- include du HEADER avec logo et bannière -->
+				<!-- vérification si l'affichage de la bannière est activée ou non dans l'administration du site -->
+				<{if $xoops_banner and $xoops_banner != '&nbsp;'}>
+				<!-- include avec affichage de la bannière activé-->
+					<{includeq file="$theme_name/xobanner_commercial.html"}>
+				<{else}>
+				<!-- include avec affichage de la bannière désactivé -->
+					<{includeq file="$theme_name/xobanner.html"}>
+				<{/if}>
+				<!-- fin de la condition d'affichage en fonction de l'activation de la bannière -->
+
+				<!-- include de userbar + searchbarbt -->
+				<{includeq file="$theme_name/userbar.html"}>
+                
+                </div>
+
+         		
+            </td>
+            <td id="xo-headerright">&nbsp;</td>
+    	</tr>
+    </table>
+    
+    	
+	<!-- fin du haut de page -->
+<!-- Include du MENU HORIZONTAL -->
+		<div id="xo-content-mh"> <!-- encapsulage du MENU HORIZONTAL -->
+			<table> <!-- bordure haute du MENU HORIZONTAL -->
+    			<tr>
+        			<td id="topblockleft">&nbsp;</td>
+        			<td id="topblock">&nbsp;</td>
+        			<td id="topblockright">&nbsp;</td>
+				</tr>
+    		</table>
+    
+    		<table>
+    			<tr>
+					<td id="blockleft">&nbsp;</td> <!-- bordure gauche -->
+					<td><{includeq file="$theme_name/globalnav.html"}></td>
+			        <td id="blockright">&nbsp;</td> <!-- bordure droite -->
+				</tr>
+    		</table>
+       
+    		<table> <!-- bordure basse du MENU HORIZONTAL -->
+    			<tr>
+        			<td id="bottomblockleft">&nbsp;</td>
+        			<td id="bottomblock">&nbsp;</td>
+       				<td id="bottomblockright">&nbsp;</td>
+    			</tr>
+   			</table>	
+		</div>
+    <!--  MENU HORIZONTAL -->
+		<!-- Ne pas modifier la partie ci-dessous, c'est supposé être l'architecture standard que chacun doit utiliser -->
+		
+    <div id="xo-canvas-content" class="<{$xoops_dirname}>">
+
+
+		<table id="xo-canvas-columns" cellspacing="0"> <!-- tableau contenant la page (3 colonnes) -->
+			
+      <tr> <!-- ligne contenant toute la page -->
+      
+				<{if $xoBlocks.canvas_left}>
+					<{includeq file="$theme_name/blockszone.html" blocks=$xoBlocks.canvas_left
+						zoneClass='xo-canvas-column' zoneId='xo-canvas-leftcolumn' zoneTag='td'
+						}>
+				<{/if}>
+
+
+				<td id="xo-page"> <!-- début de la cellule contenant la colonne centrale et la colonne de droite -->
+				
+					<{includeq file="$theme_name/breadcrumb.html"}>
+
+		      <!-- blocs haut de la colonne centrale -->
+					<{if $xoBlocks.page_topleft or $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+						<div class="xo-blockszone-xo-<{$theme_top_order}>pageblocks" id="xo-page-topblocks">
+							<{includeq file="$theme_name/centerblocks.html" topbottom=top lcr=$theme_top_order|substr:0:1}>
+							<{includeq file="$theme_name/centerblocks.html" topbottom=top lcr=$theme_top_order|substr:1:1}>
+							<{includeq file="$theme_name/centerblocks.html" topbottom=top lcr=$theme_top_order|substr:2:1}>
+						</div>
+					<{/if}>
+
+
+		    <!-- début de l'affichage de la zone de contenu -->
+				<{if $xoops_contents}>
+	
+        <!-- ***** AJOUT D'UN TABLEAU POUR LE BACKGROUND DE LA ZONE DE CONTENU ***** -->
+
+<div id="xo-content"> <!-- encapsulage de la zone de contenu -->
+
+        <table> <!-- bordure haute de la zone de contenu -->
+    			<tr>
+        			<td id="topblockleft">&nbsp;</td>
+        			<td id="topblock">&nbsp;</td>
+        			<td id="topblockright">&nbsp;</td>
+    		  </tr>
+    		</table>
+    
+    		<table>
+    			<tr>
+            <td id="blockleft">&nbsp;</td> <!-- bordure gauche -->
+            <td><div><{$xoops_contents}></div></td> <!-- contenu -->
+            <td id="blockright">&nbsp;</td> <!-- bordure droite -->
+          </tr>
+    		</table>
+       
+    		<table> <!-- bordure basse de la zone de contenu -->
+    			<tr>
+        			<td id="bottomblockleft">&nbsp;</td>
+        			<td id="bottomblock">&nbsp;</td>
+       				<td id="bottomblockright">&nbsp;</td>
+    			</tr>
+   			</table>
+                    
+        <!-- ***** FIN BACKGROUND ZONE DE CONTENU ***** -->     
+        
+        <{/if}>
+				<!-- fin de l'affichage de la zone de contenu -->
+
+</div> <!-- fin encapsulage de la zone de contenu -->
+
+
+        <!-- blocs bas de la colonne centrale -->
+					<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomcenter or $xoBlocks.page_bottomright}>
+						<div class="xo-blockszone-xo-<{$theme_bottom_order}>pageblocks" id="xo-page-bottomblocks">
+							<{includeq file="$theme_name/centerblocks.html" topbottom=bottom lcr=$theme_bottom_order|substr:0:1}>
+							<{includeq file="$theme_name/centerblocks.html" topbottom=bottom lcr=$theme_bottom_order|substr:1:1}>
+							<{includeq file="$theme_name/centerblocks.html" topbottom=bottom lcr=$theme_bottom_order|substr:2:1}>
+						</div>
+					<{/if}>
+          
+                  
+				</td> <!-- fin de la cellule contenant la colonne centrale et la colonne de droite -->
+
+
+				<{if $xoBlocks.canvas_right}>
+					<{includeq file="$theme_name/blockszone.html" blocks=$xoBlocks.canvas_right
+						zoneClass='xo-canvas-column' zoneId='xo-canvas-rightcolumn' zoneTag='td'
+					}>
+				<{/if}>
+			</tr>
+			</table>
+
+
+         <!-- include du "up top" -->
+			<{includeq file="$theme_name/uptop.html"}>
+		</div>
+
+		<!-- include du PIED DE PAGE -->
+        
+       
+       <!-- **** Ajout d'un fond gauche et droit au footer **** -->
+       
+    <table>
+    	<tr>
+    		<td id="xo-footerleft">&nbsp;</td>
+            <td>
+ 				<{includeq file="$theme_name/xofooter.html"}>
+			</td>
+            <td id="xo-footerright">&nbsp;</td>
+    	</tr>
+    </table>
+                
+        
+	</div>
+	
+		<!-- #### fermeture colonne centrale #### -->
+	     </td>
+	     
+	  <!-- et création de la marge droite 13px #### -->  
+    <td id="margedroite">&nbsp;</td>
+  </tr>
+</table>
+	
+
+
+
+	
+		<!-- #### marge inférieure 13px #### -->
+  <table>
+   <tr>
+    <td id="leftcorner-bottom">&nbsp;</td>
+    <td id="margebas">&nbsp;</td>
+    <td id="rightcorner-bottom">&nbsp;</td>
+  </tr>
+  <tr><td colspan="3"><!--{xo-logger-output}--></td></tr>
+</table>
+
+</div>
+
+
+</body>
+</html>

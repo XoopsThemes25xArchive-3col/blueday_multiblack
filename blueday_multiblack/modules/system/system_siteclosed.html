@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+	<{assign var=theme_name value=$xoTheme->folderName|cat:'/xotpl'}>
+	<{assign var=theme_plugin value=$xoTheme->folderName|cat:'/xoplugins'}>
+
+	<!-- Metas -->
+	<{includeq file="$theme_name/xometas.html"}>
+
+	<{$xoops_module_header}>
+
+<!-- Scripts -->
+<{includeq file="$theme_name/xoscripts.html"}>	
+
+</head>
+<body>
+
+<div id="xo-canvas"<{if $columns_layout}> class="<{$columns_layout}>"<{/if}>>
+<div class="xo-wrapper">
+<div id="xo-bgstatic" class="<{$xoops_dirname}>"></div>
+
+<!-- #### marge supérieure de 13px #### -->
+	
+<table>
+  
+  <tr>
+    <td id="leftcorner-top">&nbsp;</td>
+    <td id="margetop">&nbsp;</td>
+    <td id="rightcorner-top">&nbsp;</td>
+  </tr>
+  
+  </table>
+
+<!-- #### marge gauche 13px et ouverture colonne centrale #### -->
+	<table>
+     <tr>
+    	<td id="margegauche">&nbsp;</td>
+    	
+        
+        <!-- #### début de la colonne centrale #### -->
+        <td>
+
+
+		<!-- début du HAUT DE PAGE -->
+		
+    					<!-- **** Ajout d'un fond gauche et droit au header **** -->
+    					<table>
+    					<tr>
+    					<td id="xo-headerleft">&nbsp;</td>
+            			<td>
+
+
+							<div id="xo-header" class="<{$xoops_dirname}>">
+                                
+								<!-- vérification si l'affichage de la bannière est activée ou non dans l'administration du site -->
+								<{if $xoops_banner and $xoops_banner != '&nbsp;'}>
+        						<!-- include avec affichage de la bannière activé-->
+								<{includeq file="$theme_name/xobanner_commercial.html"}>
+								<{else}>
+								<!-- include avec affichage de la bannière désactivé -->
+								<{includeq file="$theme_name/xobanner.html"}>
+								<{/if}>
+								<!-- fin de la condition d'affichage en fonction de l'activation de la bannière -->
+								</div>
+                                
+                                <div id="xo-top">
+								
+                                <!-- include du bloc Langues dans le header -->
+								<{includeq file="$theme_name/language.html"}>
+								
+                                <!-- include du bloc Utilisateur dans le header - Attention il faut garder des champs de connection dans le template -->
+								<{includeq file="$theme_name/userbar_siteclosed.html"}>
+								</div>
+		            </td>
+           			 <td id="xo-headerright">&nbsp;</td>
+			    	</tr>
+    				</table>
+
+
+
+           <!-- ***** AJOUT D'UN TABLEAU POUR LE BACKGROUND DE LA ZONE DE CONTENU ***** -->
+        
+            <table>
+    			<tr>
+        			<td id="topblockleft">&nbsp;</td>
+        			<td id="topblock">&nbsp;</td>
+        			<td id="topblockright">&nbsp;</td>
+    		    </tr>
+    		</table>
+    
+    		<table>
+    			<tr>
+        			<td id="blockleft">&nbsp;</td>
+        			<td>
+
+
+	<div id="xo-canvas-content">
+		<div id="xo-page">
+		<div id="xo-siteclose"><{$lang_siteclosemsg}></div>
+		</div>
+	</div>
+    
+     <!-- ***** FERMETURE BACKGROUND CENTRE ***** -->
+					</td>
+        			<td id="blockright">&nbsp;</td>
+    			</tr>
+    		</table>
+                
+    		<table>
+    			<tr>
+        			<td id="bottomblockleft">&nbsp;</td>
+        			<td id="bottomblock">&nbsp;</td>
+       				<td id="bottomblockright">&nbsp;</td>
+    			</tr>
+   			</table>
+                    
+               <!-- ***** FIN BACKGROUND ZONE DE CONTENU ***** -->     
+
+<!-- include du PIED DE PAGE -->
+
+       <!-- **** Ajout d'un fond gauche et droit au footer **** -->
+       
+    <table>
+    	<tr>
+    		<td id="xo-footerleft">&nbsp;</td>
+            <td>
+		<{includeq file="$theme_name/xofooter.html"}>
+        			</td>
+            <td id="xo-footerright">&nbsp;</td>
+    	</tr>
+    </table>
+	<!--{xo-logger-output}-->
+    
+
+
+
+    		<!-- #### fermeture colonne centrale #### -->
+	     </td>
+	     
+	  <!-- et création de la marge droite 13px #### -->  
+    <td id="margedroite">&nbsp;</td>
+  </tr>
+</table>
+
+	<!--{xo-logger-output}-->
+	
+		<!-- #### marge inférieure 13px #### -->
+  <table>
+   <tr>
+    <td id="leftcorner-bottom">&nbsp;</td>
+    <td id="margebas">&nbsp;</td>
+    <td id="rightcorner-bottom">&nbsp;</td>
+  </tr>
+</table>
+</div>
+</div>	
+
+</body>
+</html>

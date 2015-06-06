@@ -1,0 +1,156 @@
+<div class="system-user_profile">
+<{if $user_ownpage == true}>
+
+<form name="usernav" action="user.php" method="post">
+
+<br /><br />
+
+<table class="center">
+  <tr class="center">
+    <td><input type="button" value="<{$lang_editprofile}>" onclick="location='edituser.php'" title="<{$lang_editprofile}>"/>
+    <input type="button" value="<{$lang_avatar}>" onclick="location='edituser.php?op=avatarform'" title="<{$lang_avatar}>"/>
+    <input type="button" value="<{$lang_inbox}>" onclick="location='viewpmsg.php'" title="<{$lang_inbox}>"/>
+
+    <{if $user_candelete == true}>
+    <input type="button" value="<{$lang_deleteaccount}>" onclick="location='user.php?op=delete'" title="<{$lang_deleteaccount}>"/>
+    <{/if}>
+
+    <input type="button" value="<{$lang_logout}>" onclick="location='user.php?op=logout'" title="<{$lang_logout}>"/></td>
+  </tr>
+</table>
+</form>
+
+<br /><br />
+<{elseif $xoops_isadmin != false}>
+
+<br /><br />
+
+<table class="center">
+  <tr class="center">
+    <td><input type="button" value="<{$lang_editprofile}>" onclick="location='<{$xoops_url}>/modules/system/admin.php?fct=users&uid=<{$user_uid}>&op=modifyUser'" title="<{$lang_editprofile}>"/>
+    <input type="button" value="<{$lang_deleteaccount}>" onclick="location='<{$xoops_url}>/modules/system/admin.php?fct=users&op=delUser&uid=<{$user_uid}>'" title="<{$lang_deleteaccount}>"/>
+  </tr>
+</table>
+
+<br /><br />
+<{/if}>
+<div class="vcard">
+<table cellspacing="5">
+  <tr class="top">
+    <td class="width50">
+      <table class="outer" cellpadding="4" cellspacing="1">
+        <tr>
+          <th colspan="2" class="center"><{$lang_allaboutuser}></th>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_avatar}></td>
+          <td class="even"><span class="photo"><img src="<{$user_avatarurl}>" alt="Avatar" /></span></td>
+        </tr>
+        <tr>
+          <td class="head"><{$lang_realname}></td>
+          <td class="odd"><span class="fn nickname"><{$user_realname}></span></td>
+        </tr>
+        <tr>
+          <td class="head"><{$lang_website}></td>
+          <td class="even"><span class="url"><{$user_websiteurl}></span></td>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_email}></td>
+          <td class="odd"><{$user_email}></td>
+          
+        
+        
+        </tr>
+	<tr class="top">
+          <td class="head"><{$lang_privmsg}></td>
+          <td class="even"><{$user_pmlink}></td>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_icq}></td>
+          <td class="odd"><{$user_icq}></td>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_aim}></td>
+          <td class="even"><{$user_aim}></td>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_yim}></td>
+          <td class="odd"><{$user_yim}></td>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_msnm}></td>
+          <td class="even"><{$user_msnm}></td>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_location}></td>
+          <td class="odd"><span class="adr country"><{$user_location}></span></td>
+        </tr>
+        <tr valign="top">
+          <td class="head"><{$lang_occupation}></td>
+          <td class="even"><span class="org"><{$user_occupation}></span></td>
+        </tr>
+        <tr valign="top">
+          <td class="head"><{$lang_interest}></td>
+          <td class="odd"><span class="category"><{$user_interest}></span></td>
+        </tr>
+        <tr valign="top">
+          <td class="head"><{$lang_extrainfo}></td>
+          <td class="even"><span class="note"><{$user_extrainfo}></span></td>
+        </tr>
+      </table>
+    </td>
+    <td class="width50">
+      <table class="outer" cellpadding="4" cellspacing="1">
+        <tr class="top">
+          <th colspan="2" class="center"><{$lang_statistics}></th>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_membersince}></td>
+          <td class="even"><{$user_joindate}></td>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_rank}></td>
+          <td class="odd"><{$user_rankimage}><br /><{$user_ranktitle}></td>
+        </tr>
+        <tr class="top">
+          <td class="head"><{$lang_posts}></td>
+          <td class="even"><{$user_posts}></td>
+        </tr>
+	<tr class="top">
+          <td class="head"><{$lang_lastlogin}></td>
+          <td class="odd"><{$user_lastlogin}></td>
+        </tr>
+      </table>
+      <br />
+      <table class="outer" cellpadding="4" cellspacing="1">
+        <tr class="top">
+          <th colspan="2" class="center"><{$lang_signature}></th>
+        </tr>
+        <tr class="top">
+          <td class="even"><{$user_signature}></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></div>
+
+<!-- start module search results loop -->
+<{foreach item=module from=$modules}>
+
+
+<h4><{$module.name}></h4>
+<p>
+  <!-- start results item loop -->
+  <{foreach item=result from=$module.results}>
+
+  <img src="<{$result.image}>" alt="<{$module.name}>" /><b><a href="<{$result.link}>" title="<{$result.title}>"><{$result.title}></a></b><br /><small>(<{$result.time}>)</small><br />
+
+  <{/foreach}>
+  <!-- end results item loop -->
+
+<{$module.showall_link}>
+</p>
+
+<{/foreach}>
+<!-- end module search results loop -->
+</div>

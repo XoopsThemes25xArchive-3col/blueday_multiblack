@@ -1,0 +1,120 @@
+
+/* ------------------------ Blocks ------------------------ */
+/* search */
+.xo-block .system-search {	text-align: center;}
+.xo-block .system-search input[name=query] {	width:	120px;}
+.xo-block .system-search fieldset {	padding: 0;}
+.xo-block .system-search legend { display: none;}
+.xo-block .system-search .formButtons {}
+.xo-block .system-search input {}
+.xo-block .system-search button {}
+
+/* new_users and site_info */
+.xo-block .system-new_users, .xo-block .system-site_info {width: 100%;}
+.xo-block .system-new_users a, .xo-block .system-site_info a {  font-size: .9em;}
+.xo-block .system-new_users img, .xo-block .system-site_info img{ border: 0 !important;}
+.xo-block .system-new_users ul,  .xo-block .system-site_info ul {
+	margin:						0;
+	padding:						.25em;
+	list-style:					none;
+}
+.system-site_info li.group { text-align: center;}
+.xo-block .system-new_users li, .xo-block .system-site_info li.user {
+	padding-left:				35px !important;
+	padding-bottom:			.25em;
+	list-style: 				none;
+}
+.xo-block .system-new_users li, .xo-block .system-site_info li {
+	clear:						both;
+	list-style: 				none !important;
+}
+.xo-block .system-new_users .avatar, .xo-block .system-site_info .avatar {
+	width:						30px;
+	float:						left;
+	margin-left:				-40px !important;
+	margin-bottom:				4px;
+}
+.xo-block .system-new_users span.dateRegistered {
+	padding-left:				6px;
+	font-size: 					.7em;
+	font-style: 				italic;
+}
+.xo-block .system-site_info .recommend_us {
+	clear:						both;
+	padding-top:				.5em;
+	text-align:					center;
+}
+/* theme select */
+.system-select_themes {
+	text-align: center;
+}
+.system-select_themes select {
+	/*font-size: .4em;*/
+	width: 95%;
+}
+/* ------------------------ Pages ------------------------ */
+/* user_profile */
+/*.system-user_profile h2 {
+	clear:		both;
+}
+
+
+.system-user_profile th {
+	text-align:		left;
+	padding:		0px 1em;
+}
+
+.system-user_profile #userImage {
+	float:			left;
+	margin:			1em;
+	border:			1px solid #ccc;
+	padding:		2em;
+	text-align:		center;
+	background:		#f8f8f8;
+}
+.system-user_profile a#userImage:hover {
+	border-color:	#139EE8;
+}
+.system-user_profile #userFields {
+	margin-top:		1em;
+}*/
+
+/* select_notifications */
+/*#system-select_notifications {
+	border:			1px solid #f0f0f0;
+	background:		#F4FAFF;
+	text-align:		center;
+	padding:		.25em;
+	margin-bottom:	.5em;
+}
+#system-select_notifications table {
+	text-align:		left;
+	width:			100%;
+}*/
+
+/*
+
+
+
+/*.xo-block .system-recent_comments .datePosted {
+	width:		25%;
+}
+.xo-block .system-recent_comments .icon {
+	width:		16px;
+	font-size:	90%;
+}
+
+.system-user_profile h1:before {
+	content:	url(../../icons/64x64/user.png);
+	display:	block;
+	margin-left:	-70px;
+	margin-bottom:	-45px;
+}
+.system-user_profile h1 {
+	padding-left:	70px;
+}
+
+
+
+
+*/

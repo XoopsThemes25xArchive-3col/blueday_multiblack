@@ -1,0 +1,74 @@
+
+<{if $lcr=='l'}><{assign var=lcr value='left'}>
+<{elseif $lcr=='r'}><{assign var=lcr value='right'}>
+<{else}><{assign var=lcr value='center'}>
+<{/if}>
+
+<{assign var=zone value="page_$topbottom$lcr"}>
+
+<{*
+<{if $xoBlocks[$zone]}>
+
+	<div class="xo-blockszone" id="xo-page-<{$topbottom}><{$lcr}>blocks">
+	<{foreach from=$xoBlocks[$zone] item=block}>
+	
+    <table>
+    	<tr>
+        <td id="topblockleft">&nbsp;</td>
+        <td id="topblock">&nbsp;</td>
+        <td id="topblockright">&nbsp;</td>
+    	</tr>
+    </table>
+    
+    <div class="blockbg <{$block.module}>">
+	
+    <div class="xo-block <{$block.module}>">
+		<{if $block.title}><div class="xo-blocktitle"><{$block.title}></div><{/if}>
+		<div class="xo-blockcontent"><{$block.content}></div>
+	</div>
+    
+	</div>
+	<{/foreach}>
+	</div>
+<{/if}>
+*}>
+
+<{if $xoBlocks[$zone]}>
+
+	<div class="xo-blockszone" id="xo-page-<{$topbottom}><{$lcr}>blocks">
+    
+	<{foreach from=$xoBlocks[$zone] item=block}>
+    
+    <table>
+    	<tr>
+        <td id="topblockleft">&nbsp;</td>
+        <td id="topblock">&nbsp;</td>
+        <td id="topblockright">&nbsp;</td>
+    	</tr>
+    </table>
+    
+    <table>
+    	<tr>
+        <td id="blockleft">&nbsp;</td>
+        <td>
+        <div class="xo-block <{$block.module}>">
+			<{if $block.title}><div class="xo-blocktitle"><{$block.title}></div><{/if}>
+			<div class="xo-blockcontent"><{$block.content}></div>
+		</div>
+        </td>
+        <td id="blockright">&nbsp;</td>
+    	</tr>
+    </table>
+
+        
+    <table>
+    	<tr>
+        <td id="bottomblockleft">&nbsp;</td>
+        <td id="bottomblock">&nbsp;</td>
+        <td id="bottomblockright">&nbsp;</td>
+    	</tr>
+    </table>
+        
+	<{/foreach}>
+	</div>
+<{/if}>
